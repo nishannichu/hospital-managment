@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock title %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+     {% block content %}<h2 class="text-center">Doctors</h2>
+     <hr>
+     {% for i in doct %}
+     <div class="mx-auto w-50 bg-primary text-center text-white rounded">
+        <img src="{{i.doc_image.url}}" width="150px" class="p-2 rounded-circle">
+     <h1>{{i.doc_name}}</h1>
+     <h4>{{i.doc_spec}}</h4>
+    <h4>{{i.dep_name}}</h4>
+     </div>
+     {% endfor %}
+     {% endblock content %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
